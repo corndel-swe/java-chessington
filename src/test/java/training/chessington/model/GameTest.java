@@ -1,6 +1,6 @@
-package training.chessington.model;
+package com.corndel.chessington.model;
 
-import static training.chessington.model.pieces.PieceAssert.*;
+import static com.corndel.chessington.model.pieces.PieceAssert.*;
 import static org.assertj.core.api.Assertions.*;
 
 public class GameTest {

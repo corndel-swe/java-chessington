@@ -1,6 +1,13 @@
+jte-classes/
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+dependency-reduced-pom.xml
+
+.classpath
+.project
+.settings
+
 *.iml
 .idea/
-
-target/
-
-dependency-reduced-pom.xml

@@ -1,11 +1,11 @@
-package training.chessington.model.pieces;
+package com.corndel.chessington.model.pieces;
 
 import org.junit.Before;
 import org.junit.Test;
-import training.chessington.model.Board;
-import training.chessington.model.Coordinates;
-import training.chessington.model.Move;
-import training.chessington.model.PlayerColour;
+import com.corndel.chessington.model.Board;
+import com.corndel.chessington.model.Coordinates;
+import com.corndel.chessington.model.Move;
+import com.corndel.chessington.model.PlayerColour;
 
 import java.util.List;
 

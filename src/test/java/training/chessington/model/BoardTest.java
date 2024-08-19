@@ -1,10 +1,10 @@
-package training.chessington.model;
+package com.corndel.chessington.model;
 
 import org.junit.Test;
-import training.chessington.model.pieces.Piece;
+import com.corndel.chessington.model.pieces.Piece;
 
-import static training.chessington.model.pieces.Piece.PieceType.PAWN;
-import static training.chessington.model.pieces.PieceAssert.*;
+import static com.corndel.chessington.model.pieces.Piece.PieceType.PAWN;
+import static com.corndel.chessington.model.pieces.PieceAssert.*;
 import static org.assertj.core.api.Assertions.*;
 
 public class BoardTest {

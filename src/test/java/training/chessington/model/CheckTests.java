@@ -1,11 +1,11 @@
-package training.chessington.model;
+package com.corndel.chessington.model;
 
 import org.junit.Before;
 import org.junit.Test;
-import training.chessington.model.pieces.King;
-import training.chessington.model.pieces.Pawn;
-import training.chessington.model.pieces.Piece;
-import training.chessington.model.pieces.Rook;
+import com.corndel.chessington.model.pieces.King;
+import com.corndel.chessington.model.pieces.Pawn;
+import com.corndel.chessington.model.pieces.Piece;
+import com.corndel.chessington.model.pieces.Rook;
 
 import java.util.List;
 

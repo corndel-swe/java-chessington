@@ -1,7 +1,7 @@
-package training.chessington.model.pieces;
+package com.corndel.chessington.model.pieces;
 
 import org.assertj.core.api.AbstractAssert;
-import training.chessington.model.PlayerColour;
+import com.corndel.chessington.model.PlayerColour;
 
 public class PieceAssert extends AbstractAssert<PieceAssert, Piece> {
 
