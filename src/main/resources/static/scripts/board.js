@@ -21,7 +21,7 @@ export class Board {
   }
 
   async loadBoardData(boardJson) {
-    this.currentPlayer = boardJson.current_player
+    this.currentPlayer = boardJson.current_player.toLowerCase()
 
     for (let i = 0; i <= 7; i++) {
       this.squares[i] = this.squares[i] || []
@@ -61,7 +61,7 @@ export class Board {
         }
       
         if (squareData) {
-          const piece = await this.buildPiece(square.group, squareData.piece, squareData.player)
+          const piece = await this.buildPiece(square.group, squareData.piece.toLowerCase(), squareData.player.toLowerCase())
           const chessPosition = this.getChessPositionForRowAndCol(i, j)
           const pieceId = `${chessPosition}-${squareData.player}-${squareData.piece.toLowerCase()}`
           piece.svg.attr('id', pieceId)

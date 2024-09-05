@@ -14,7 +14,7 @@ export async function loadPieceImage(piece, player) {
         return imageCache[imageFileName]
     }
 
-    const imageLocation = `/static/images/${imageFileName}`
+    const imageLocation = `/images/${imageFileName}`
 
     const response = await fetch(imageLocation)
     const svgData = await response.text()

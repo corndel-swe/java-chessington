@@ -4,20 +4,30 @@ import com.corndel.chessington.model.Board;
 import com.corndel.chessington.model.Coordinates;
 import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public interface Piece {
-    enum PieceType {
-        PAWN, KNIGHT, BISHOP, ROOK, QUEEN, KING
-    }
+  enum PieceType {
+    PAWN,
+    KNIGHT,
+    BISHOP,
+    ROOK,
+    QUEEN,
+    KING
+  }
 
-    PieceType getType();
-    PlayerColour getColour();
+  @JsonProperty("piece")
+  PieceType getType();
 
-    List<Move> getAllowedMoves(Coordinates from, Board board);
+  @JsonProperty("player")
+  PlayerColour getColour();
 
-    void setMoved();
+  @JsonIgnore
+  List<Move> getAllowedMoves(Coordinates from, Board board);
 
-    Piece duplicate();
+  void setMoved();
+
+  Piece duplicate();
 }

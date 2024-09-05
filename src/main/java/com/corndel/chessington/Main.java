@@ -1,25 +1,19 @@
 package com.corndel.chessington;
 
+import com.corndel.chessington.model.Board;
+import com.corndel.chessington.model.Coordinates;
+import com.corndel.chessington.model.Game;
+import com.corndel.chessington.model.Move;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.staticfiles.Location;
 
 public class Main {
-
-  // @Override
-  // public void start(Stage primaryStage) throws Exception {
-  //   Board board = Board.forNewGame();
-  //   Game game = new Game(board);
-  //   Parent chessBoard = new ChessApp(game);
-  //   primaryStage.setTitle("Chessington");
-  //   Scene scene = new Scene(new Group());
-  //   primaryStage.setScene(scene);
-  //   scene.setRoot(chessBoard);
-  //   primaryStage.show();
-  // }
-
   public static void main(String[] args) {
+    var board = Board.forNewGame();
+    var game = new Game(board);
     var app = Javalin.create(config -> config.staticFiles.add("/static", Location.CLASSPATH));
+
     app.get(
         "/",
         ctx -> {
@@ -27,9 +21,32 @@ public class Main {
           var inputStream = Main.class.getResourceAsStream("/html/index.html");
           ctx.result(inputStream);
         });
-    app.get("/board-data", ctx -> {});
-    app.post("/select-piece", ctx -> {});
-    app.post("/move-piece", ctx -> {});
+
+    app.get(
+        "/board-data",
+        ctx -> {
+          ctx.json(game);
+        });
+
+    app.post(
+        "/select-piece",
+        ctx -> {
+          var selectedSquare = ctx.bodyAsClass(Coordinates.class);
+          var allowedMoves =
+              game.getAllowedMoves(selectedSquare).stream().map(move -> move.getTo()).toList();
+
+          ctx.json(allowedMoves);
+        });
+
+    app.post(
+        "/move-piece",
+        ctx -> {
+          var move = ctx.bodyAsClass(Move.class);
+          game.makeMove(move);
+
+          ctx.json(game);
+        });
+
     app.start(8080);
   }
 }
