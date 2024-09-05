@@ -1,11 +1,12 @@
 package com.corndel.chessington.model;
 
-import org.junit.Test;
 import com.corndel.chessington.model.pieces.Piece;
 
 import static com.corndel.chessington.model.pieces.Piece.PieceType.PAWN;
 import static com.corndel.chessington.model.pieces.PieceAssert.*;
 import static org.assertj.core.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 public class BoardTest {
     @Test
