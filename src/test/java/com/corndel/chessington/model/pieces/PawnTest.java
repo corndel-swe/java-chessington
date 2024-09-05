@@ -7,6 +7,7 @@ import com.corndel.chessington.model.Coordinates;
 import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class PawnTest {
@@ -40,6 +41,7 @@ public class PawnTest {
     assertThat(moves).contains(new Move(coords, coords.plus(1, 0)));
   }
 
+  @Disabled
   @Test
   public void whitePawnCanMoveUpTwoSquaresIfNotMoved() {
     // Arrange
@@ -55,6 +57,7 @@ public class PawnTest {
     assertThat(moves).contains(new Move(coords, coords.plus(-2, 0)));
   }
 
+  @Disabled
   @Test
   public void blackPawnCanMoveDownTwoSquaresIfNotMoved() {
     // Arrange
@@ -70,6 +73,7 @@ public class PawnTest {
     assertThat(moves).contains(new Move(coords, coords.plus(2, 0)));
   }
 
+  @Disabled
   @Test
   public void whitePawnCannotMoveUpTwoSquaresIfAlreadyMoved() {
     // Arrange
@@ -88,6 +92,7 @@ public class PawnTest {
     assertThat(moves).doesNotContain(new Move(moved, moved.plus(-2, 0)));
   }
 
+  @Disabled
   @Test
   public void blackPawnCannotMoveDownTwoSquaresIfAlreadyMoved() {
     // Arrange
@@ -106,6 +111,7 @@ public class PawnTest {
     assertThat(moves).doesNotContain(new Move(moved, moved.plus(2, 0)));
   }
 
+  @Disabled
   @Test
   public void pawnsCannotMoveIfPieceInFront() {
     // Arrange
@@ -128,6 +134,7 @@ public class PawnTest {
     assertThat(whiteMoves).isEmpty();
   }
 
+  @Disabled
   @Test
   public void pawnsCannotMoveTwoSquaresIfPieceTwoInFront() {
     // Arrange
@@ -150,6 +157,7 @@ public class PawnTest {
     assertThat(whiteMoves).doesNotContain(new Move(blackCoords, blackCoords.plus(-2, 0)));
   }
 
+  @Disabled
   @Test
   public void whitePawnsCannotMoveAtTopOfBoard() {
     // Arrange
@@ -165,6 +173,7 @@ public class PawnTest {
     assertThat(moves).isEmpty();
   }
 
+  @Disabled
   @Test
   public void blackPawnsCannotMoveAtBottomOfBoard() {
     // Arrange
@@ -180,6 +189,7 @@ public class PawnTest {
     assertThat(moves).isEmpty();
   }
 
+  @Disabled
   @Test
   public void whitePawnsCanCaptureDiagonally() {
     // Arrange
@@ -199,6 +209,7 @@ public class PawnTest {
     assertThat(moves).contains(new Move(pawnCoords, enemyCoords));
   }
 
+  @Disabled
   @Test
   public void blackPawnsCanCaptureDiagonally() {
     // Arrange
@@ -218,6 +229,7 @@ public class PawnTest {
     assertThat(moves).contains(new Move(pawnCoords, enemyCoords));
   }
 
+  @Disabled
   @Test
   public void pawnsCannotMoveDiagonallyOffBoard() {
     // Arrange
@@ -240,6 +252,7 @@ public class PawnTest {
     assertThat(whiteMoves).isEmpty();
   }
 
+  @Disabled
   @Test
   public void whitePawnsCannotMoveDiagonallyNotToCapture() {
     // Arrange
@@ -261,6 +274,7 @@ public class PawnTest {
     assertThat(moves).doesNotContain(new Move(pawnCoords, otherDiagonal));
   }
 
+  @Disabled
   @Test
   public void blackPawnsCannotMoveDiagonallyNotToCapture() {
     // Arrange

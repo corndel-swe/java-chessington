@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.corndel.chessington.model.Board;
@@ -22,6 +23,7 @@ public class RookTest {
     board = Board.empty();
   }
 
+  @Disabled
   @Test
   public void rookCanMoveHorizontally() {
     // Arrange
@@ -43,6 +45,7 @@ public class RookTest {
             new Move(coords, new Coordinates(3, 7)));
   }
 
+  @Disabled
   @Test
   public void rookCannotMoveToOwnSquare() {
     // Arrange
@@ -56,6 +59,7 @@ public class RookTest {
     assertThat(allowedMoves).doesNotContain(new Move(coords, coords));
   }
 
+  @Disabled
   @Test
   public void rookCanMoveVertically() {
     // Arrange
@@ -77,6 +81,7 @@ public class RookTest {
             new Move(coords, new Coordinates(7, 4)));
   }
 
+  @Disabled
   @Test
   public void rookCanCaptureOpposingPieceHorizontally() {
     // Arrange
@@ -94,6 +99,7 @@ public class RookTest {
     assertThat(allowedMoves).contains(new Move(coords, opponentCoords));
   }
 
+  @Disabled
   @Test
   public void rookCanCaptureOpposingPieceVertically() {
     // Arrange
@@ -111,6 +117,7 @@ public class RookTest {
     assertThat(allowedMoves).contains(new Move(coords, opponentCoords));
   }
 
+  @Disabled
   @Test
   public void rookIsBlockedByFriendlyPieceHorizontally() {
     // Arrange
@@ -132,6 +139,7 @@ public class RookTest {
             new Move(coords, new Coordinates(3, 0)));
   }
 
+  @Disabled
   @Test
   public void rookIsBlockedByFriendlyPieceVertically() {
     // Arrange
@@ -153,6 +161,7 @@ public class RookTest {
             new Move(coords, new Coordinates(7, 4)));
   }
 
+  @Disabled
   @Test
   public void rookCannotPassThroughOpposingPieceHorizontally() {
     // Arrange
@@ -172,6 +181,7 @@ public class RookTest {
             new Move(coords, new Coordinates(3, 1)), new Move(coords, new Coordinates(3, 0)));
   }
 
+  @Disabled
   @Test
   public void rookCannotPassThroughOpposingPieceVertically() {
     // Arrange

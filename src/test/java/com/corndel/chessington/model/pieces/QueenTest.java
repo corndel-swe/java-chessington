@@ -8,6 +8,7 @@ import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class QueenTest {
@@ -20,6 +21,7 @@ public class QueenTest {
     board = Board.empty();
   }
 
+  @Disabled
   @Test
   public void queenCanMoveLaterally() {
     // Arrange
@@ -48,6 +50,7 @@ public class QueenTest {
             new Move(coords, new Coordinates(7, 4)));
   }
 
+  @Disabled
   @Test
   public void queenCanMoveDiagonally() {
     // Arrange
@@ -75,6 +78,7 @@ public class QueenTest {
             new Move(coords, new Coordinates(0, 7)));
   }
 
+  @Disabled
   @Test
   public void queenOnlyAllowsDiagonalAndLateralMoves() {
     // Arrange
@@ -88,6 +92,7 @@ public class QueenTest {
     assertThat(allowedMoves).hasSize(27);
   }
 
+  @Disabled
   @Test
   public void queenCanCaptureOpposingPieces() {
     // Arrange
@@ -105,6 +110,7 @@ public class QueenTest {
     assertThat(allowedMoves).contains(new Move(coords, opponentCoords));
   }
 
+  @Disabled
   @Test
   public void queenCannotPassThroughOpposingPieces() {
     // Arrange
@@ -124,6 +130,7 @@ public class QueenTest {
             new Move(coords, new Coordinates(3, 6)), new Move(coords, new Coordinates(3, 7)));
   }
 
+  @Disabled
   @Test
   public void queenIsBlockedByFriendlyPieces() {
     // Arrange

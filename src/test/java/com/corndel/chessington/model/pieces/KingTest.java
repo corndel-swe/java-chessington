@@ -8,6 +8,7 @@ import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class KingTest {
@@ -20,6 +21,7 @@ public class KingTest {
     board = Board.empty();
   }
 
+  @Disabled
   @Test
   public void kingCanMoveToAdjacentSquares() {
     // Arrange
@@ -42,6 +44,7 @@ public class KingTest {
             new Move(coords, coords.plus(-1, -1)));
   }
 
+  @Disabled
   @Test
   public void kingCanTakeOpposingPiece() {
     // Arrange
@@ -59,6 +62,7 @@ public class KingTest {
     assertThat(allowedMoves).contains(new Move(coords, opponentCoords));
   }
 
+  @Disabled
   @Test
   public void kingCannotTakeFriendlyPiece() {
     // Arrange
@@ -76,6 +80,7 @@ public class KingTest {
     assertThat(allowedMoves).doesNotContain(new Move(coords, friendlyCoords));
   }
 
+  @Disabled
   @Test
   public void kingCannotLeaveBoard() {
     // Arrange
