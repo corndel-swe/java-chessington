@@ -12,7 +12,17 @@ import org.junit.jupiter.api.Test;
 
 public class D2E1Tests {
   @Test
-  public void PIExists() {
+  public void PiExists() {
+    try {
+      var c = Class.forName("com.corndel.exercises.Maths");
+      var f = c.getField("PI");
+      assertThat(f).isNotNull();
+    } catch (Throwable e) {
+      fail(e);
+    }
+  }
+  @Test
+  public void PiIsStatic() {
     try {
       var c = Class.forName("com.corndel.exercises.Maths");
       var f = c.getField("PI");
@@ -24,7 +34,7 @@ public class D2E1Tests {
   }
 
   @Test
-  public void PIIsCorrectValue() {
+  public void PiIsCorrectValue() {
     try {
       var c = Class.forName("com.corndel.exercises.Maths");
       var f = c.getField("PI");
@@ -39,10 +49,54 @@ public class D2E1Tests {
   public void MaxExists() {
     try {
       var c = Class.forName("com.corndel.exercises.Maths");
-
       var m = c.getMethod("max", double.class, double.class);
 
       assertThat(m).isNotNull();
+    } catch (Throwable e) {
+      fail(e);
+    }
+  }
+
+  @Test
+  public void MaxIsStatic() {
+    try {
+      var c = Class.forName("com.corndel.exercises.Maths");
+      var m = c.getMethod("max", double.class, double.class);
+      var mod = m.getModifiers();
+
+      assertThat(Modifier.isStatic(mod)).isTrue();
+    } catch (Throwable e) {
+      fail(e);
+    }
+  }
+
+  @Test
+  public void MaxReturnsFirstValueIfGreater() {
+    try {
+      var v1 = 1.5;
+      var v2 = 0.7;
+      var c = Class.forName("com.corndel.exercises.Maths");
+      var m = c.getMethod("max", double.class, double.class);
+
+      var result = m.invoke(c, v1, v2);
+
+      assertThat(result).isEqualTo(v1);
+    } catch (Throwable e) {
+      fail(e);
+    }
+  }
+
+  @Test
+  public void MaxReturnsSecondValueIfGreater() {
+    try {
+      var v1 = 0.5;
+      var v2 = 0.7;
+      var c = Class.forName("com.corndel.exercises.Maths");
+      var m = c.getMethod("max", double.class, double.class);
+
+      var result = m.invoke(c, v1, v2);
+
+      assertThat(result).isEqualTo(v2);
     } catch (Throwable e) {
       fail(e);
     }

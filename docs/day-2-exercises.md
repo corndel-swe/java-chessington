@@ -6,7 +6,7 @@ using classes.
 ## Exercise 1: Static methods and properties
 
 Let's make our own set of utility methods and properties, called `Maths`. A
-skeleton file and class is provided in `exercises/maths.js`
+skeleton file and class is provided in [Maths.java](../src/main/java/com/corndel/exercises/Maths.java)
 
 Read the docs about
 [static members](https://tech-docs.corndel.com/java/static-members.html).
@@ -22,9 +22,9 @@ To run the tests for this exercise, run `./mvnw clean test -Dtest=D2E1Tests` in 
 ## Exercise 2: Inheritance
 
 To continue on with our theme with maths, we've written a `Rectangle` and a
-`Square` class inside `exercises/rectangles.js`.
+`Square` class.
 
-If you have a quick look through the file, you'll spot that the `Rectangle` and
+If you have a quick look through the files, you'll spot that the `Rectangle` and
 `Square` classes look (and are conceptually) _very_ similar - a sign that we can
 do some refactoring.
 
