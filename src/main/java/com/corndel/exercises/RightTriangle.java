@@ -1,6 +1,6 @@
 package com.corndel.exercises;
 
-public class RightTriangle {
+public class RightTriangle implements Shape {
   private double base;
   private double height;
 
@@ -19,5 +19,15 @@ public class RightTriangle {
 
   public double getHypotenuse() {
     return Math.sqrt(base * base + height * height);
+  }
+
+  @Override
+  public double getArea() {
+    return base * height * 0.5;
+  }
+
+  @Override
+  public double getPerimeter() {
+    return base + height + getHypotenuse();
   }
 }

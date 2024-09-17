@@ -2,14 +2,14 @@
 
 ## Refactoring
 
-You may have spotted that there is a class called `Piece` in
-`src/models/pieces/piece.js`.
+You may have spotted that there is a class called `AbstractPiece` in
+`../src/main/java/com/corndel/chessington/model/pieces/AbstractPiece.java`.
 
-The pieces in the folder should all _inherit_ from the `Piece` class.
+The pieces in the folder should all _inherit_ from the `AbstractPiece` class.
 
 Your task is to do the following:
 
-- [ ] Make all pieces inherit from the `Piece` class
+- [ ] Make all pieces inherit from the `AbstractPiece` class
 
 - [ ] Remove any _duplicated_ code from the child classes
 
