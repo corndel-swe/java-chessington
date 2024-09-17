@@ -51,7 +51,10 @@ Sometimes, it's not as easy to figure out _one_ way to do something that works
 for every subclass. Finding the area for a square and a rectangle may be similar
 enough, but what about a triangle? Or a circle?
 
-We have another set of shape classes in `exercises/shapes.js`, and a base class
+We have another set of shape classes and a base class:
+
+- The base class [Shape](../src/main/java/com/corndel/exercises/Shape.java)
+- The shapes [RightTriangle](../src/main/java/com/corndel/exercises/RightTriangle.java), [Circle](../src/main/java/com/corndel/exercises/Circle.java), and [Rectangle](../src/main/java/com/corndel/exercises/Rectangle.java)
 `Shape` that has placeholder methods `area` and `perimeter`.
 
 Read the documentation on

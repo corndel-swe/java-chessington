@@ -1,27 +1,25 @@
 ## Exercise 1: Writing unit tests
 
-Let's revisit our `maths` module from the previous exercise. We'll write some
+Let's revisit our `Maths` class from the previous exercise. We'll write some
 unit tests for it. That is, we'll write some tests that check that the functions
 in the module work as expected.
 
-We'll use the `mocha` testing framework to write and run our tests.
+We'll use junit and assertj to write our unit tests.
 
 - [ ] Have a read of the
-      [Unit Testing with Mocha](https://tech-docs.corndel.com/js/testing-with-mocha.html)
-      documentation to get an idea of how to use `mocha`.
+      [Unit Testing](https://tech-docs.corndel.com/java/testing.html)
+      documentation to get an idea of how to use `junit` and `assertj`.
 
-There's an empty file called `maths.test.js` in the `tests` directory. We'll
-write our tests here.
+There's an empty file called `MathsTests.java` in the `tests` directory. We'll write our tests here.
 
-- [ ] Write a test that ensures `Maths.PI` is present in the `Maths` class, and
-      ensure it is equal to `3.14`.
+- [ ] Write a test that ensures `Maths.PI` is equal to `3.14`.
 
 - [ ] Write a test that checks that `Maths.max` returns the largest of two
       numbers. - No need to be too fancy with this test. Just put two numbers
       into `Maths.max` and check that the result is the larger of the two
       numbers.
 
-- [ ] Run your test with `npm run test:maths` in your terminal.
+- [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal.
 
 ## Exercise 2: Arrange, Act, Assert
 
