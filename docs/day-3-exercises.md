@@ -10,7 +10,7 @@ We'll use junit and assertj to write our unit tests.
       [Unit Testing](https://tech-docs.corndel.com/java/testing.html)
       documentation to get an idea of how to use `junit` and `assertj`.
 
-There's an empty file called `MathsTests.java` in the `tests` directory. We'll write our tests here.
+Create an empty file called `MathsTests.java` in the `src/test/com/corndel/exercises/` directory. We'll write our tests here.
 
 - [ ] Write a test that ensures `Maths.PI` is equal to `3.14`.
 
@@ -24,12 +24,12 @@ There's an empty file called `MathsTests.java` in the `tests` directory. We'll w
 ## Exercise 2: Arrange, Act, Assert
 
 Now, let's write some tests for our `Rectangle` class in
-`tests/rectangles.test.js`.
+`com/test/com/corndel/exercises/RectangleTests.java`.
 
 We want to test that the `area` and `perimeter` methods work as expected.
 
 - [ ] Read the
-      [Arrange, Act, Assert](https://tech-docs.corndel.com/js/arrange-act-assert.html)
+      [Arrange, Act, Assert](https://tech-docs.corndel.com/java/arrange-act-assert.html)
       documentation to get an idea of how to structure your tests.
 
 Write a test that checks that the `area` method of `Rectangle` returns the
@@ -45,7 +45,7 @@ correct value:
 - [ ] Similarly, write a test that checks that the `perimeter` method of
       `Rectangle` returns the correct value.
 
-- [ ] Run your test with `npm run test:rectangles` in your terminal.
+- [ ] Run your test with `./mvnw clean test -Dtest=RectangleTests.java` in your terminal.
 
 ## Exercise 3: Test Driven Development
 
@@ -56,7 +56,7 @@ Another approach is to write the tests _before_ we write the code. This is
 called Test Driven Development (TDD).
 
 - [ ] Read the
-      [Test Driven Development](https://tech-docs.corndel.com/js/test-driven-development.html)
+      [Test Driven Development](https://tech-docs.corndel.com/java/test-driven-development.html)
       documentation to get an idea of how to use TDD.
 
 Let's write a test for a new static method on our `Maths` class. We'll call this
@@ -73,7 +73,7 @@ Round 1:
 - [ ] Write a test that checks that `Maths.round` returns the same number when
       given a whole number.
 
-- [ ] Run your test with `npm run test:maths` in your terminal to make sure it
+- [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal to make sure it
       fails.
 
 - [ ] Write the minimal sensible code to make the test pass.

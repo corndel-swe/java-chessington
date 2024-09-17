@@ -44,11 +44,13 @@ public class D2E3Tests {
   }
 
   @Test
-  public void RightTriangleGetRadius() {
+  public void RightTriangleGetPerimeter() {
     try {
-      var circle = new RightTriangle(3.0, 4.0);
+      var rightTriangle = new RightTriangle(3.0, 4.0);
       var getPerimeter = RightTriangle.class.getMethod("getPerimeter");
-      var perimeter = getPerimeter.invoke(circle);
+      var perimeter = getPerimeter.invoke(rightTriangle);
+
+      assertThat(perimeter).isEqualTo(12.0);
     } catch (Throwable e) {
       fail(e);
     }
