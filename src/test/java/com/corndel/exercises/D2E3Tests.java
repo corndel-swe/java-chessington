@@ -35,7 +35,7 @@ public class D2E3Tests {
     try {
       var rightTriangle = new RightTriangle(3.0, 4.0);
       var getArea = RightTriangle.class.getMethod("getArea");
-      var area = getArea.invoke(rightTriangle);
+      var area = (double) getArea.invoke(rightTriangle);
 
       assertThat(area).isEqualTo(6.0);
     } catch (Throwable e) {
@@ -48,7 +48,7 @@ public class D2E3Tests {
     try {
       var rightTriangle = new RightTriangle(3.0, 4.0);
       var getPerimeter = RightTriangle.class.getMethod("getPerimeter");
-      var perimeter = getPerimeter.invoke(rightTriangle);
+      var perimeter = (double) getPerimeter.invoke(rightTriangle);
 
       assertThat(perimeter).isEqualTo(12.0);
     } catch (Throwable e) {
