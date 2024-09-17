@@ -45,24 +45,23 @@ from_ `Rectangle`.
 
 - [ ] Do we need `#side` anymore if we're using `#width` and `#height`?
 
-## Exercise 3: Method overriding
+## Exercise 3: Interfaces
 
-Sometimes, it's not as easy to figure out _one_ way to do something that works
-for every subclass. Finding the area for a square and a rectangle may be similar
-enough, but what about a triangle? Or a circle?
+Thinking about shapes more generally, every shape has a similar set of properties - e.g. area and perimeter - but the way you work them out can be different.
 
-We have another set of shape classes and a base class:
+I.e. Finding the area for a square and a rectangle may be similar enough, but what about a triangle? Or a circle?
 
-- The base class [Shape](../src/main/java/com/corndel/exercises/Shape.java)
+We have another set of shape classes and a shape interface:
+
+- The interface [Shape](../src/main/java/com/corndel/exercises/Shape.java)
 - The shapes [RightTriangle](../src/main/java/com/corndel/exercises/RightTriangle.java), [Circle](../src/main/java/com/corndel/exercises/Circle.java), and [Rectangle](../src/main/java/com/corndel/exercises/Rectangle.java)
-`Shape` that has placeholder methods `area` and `perimeter`.
+  `Shape` that has placeholder methods `area` and `perimeter`.
 
 Read the documentation on
-[Method overriding](https://tech-docs.corndel.com/java/method-overriding.html)
+[Method overriding](https://tech-docs.corndel.com/java/interfaces.html)
 
-To run the tests for this exercise, run `npm run test:d2e3` in your terminal.
+To run the tests for this exercise, run `./mvnw clean test -Dtest=D2E3Tests` in your terminal.
 
-- [ ] Make all the shape classes inherit from `Shape`.
+- [ ] Make all the shape classes implement the `Shape` interface.
 
-- [ ] Override the `getArea` and `getPerimeter` methods in each subclass to
-      return the correct values for that shape.
+- [ ] Write the `getArea` and `getPerimeter` methods in each class to return the correct values for that shape.
