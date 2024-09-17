@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Game {
   private final Board board;
@@ -33,15 +32,7 @@ public class Game {
       return new ArrayList<>();
     }
 
-    return piece.getAllowedMoves(from, board).stream()
-        .filter(move -> !turnEndsInCheck(move))
-        .collect(Collectors.toList());
-  }
-
-  private boolean turnEndsInCheck(Move move) {
-    Board trialBoard = board.clone();
-    trialBoard.move(move.getFrom(), move.getTo());
-    return isInCheck(currentPlayer, trialBoard);
+    return piece.getAllowedMoves(from, board);
   }
 
   public void makeMove(Move move) throws InvalidMoveException {
@@ -68,11 +59,6 @@ public class Game {
     }
 
     board.move(from, to);
-
-    if (isInCheck(currentPlayer, board)) {
-      throw new InvalidMoveException(currentPlayer + " cannot end their move in check!");
-    }
-
     currentPlayer = currentPlayer.getOpposite();
   }
 
@@ -84,23 +70,6 @@ public class Game {
   @JsonIgnore
   public String getResult() {
     return null;
-  }
-
-  private static boolean isInCheck(PlayerColour player, Board board) {
-    Coordinates playerKingPosition = board.getKingPositionForPlayer(player);
-    List<Coordinates> otherPlayerPositions =
-        board.getAllPiecePositionsForPlayer(player.getOpposite());
-
-    for (Coordinates opponentPiecePosition : otherPlayerPositions) {
-      Piece opponentPiece = board.get(opponentPiecePosition);
-      if (opponentPiece
-          .getAllowedMoves(opponentPiecePosition, board)
-          .contains(new Move(opponentPiecePosition, playerKingPosition))) {
-        return true;
-      }
-    }
-
-    return false;
   }
 
   @JsonProperty("board_pieces")

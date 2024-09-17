@@ -1,11 +1,8 @@
 package com.corndel.chessington.model;
 
 import com.corndel.chessington.model.pieces.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.BiConsumer;
 
-public class Board implements Cloneable {
+public class Board {
 
   public static final int BOARD_SIZE = 8;
 
@@ -49,68 +46,13 @@ public class Board implements Cloneable {
     return board[coords.getRow()][coords.getCol()];
   }
 
-  public boolean inRange(Coordinates coordinates) {
-    return coordinates.getCol() < BOARD_SIZE
-        && coordinates.getCol() >= 0
-        && coordinates.getRow() < BOARD_SIZE
-        && coordinates.getRow() >= 0;
-  }
-
-  public boolean hasPieceOfColourAt(Coordinates coords, PlayerColour colour) {
-    return get(coords) != null && get(coords).getColour() == colour;
-  }
-
   public void move(Coordinates from, Coordinates to) {
     Piece piece = board[from.getRow()][from.getCol()];
     board[to.getRow()][to.getCol()] = piece;
     board[from.getRow()][from.getCol()] = null;
-    piece.setMoved();
   }
 
   public void placePiece(Coordinates coords, Piece piece) {
     board[coords.getRow()][coords.getCol()] = piece;
-  }
-
-  public List<Coordinates> getAllPiecePositionsForPlayer(PlayerColour colour) {
-    List<Coordinates> positions = new ArrayList<>();
-    forEachPiece(
-        (coords, piece) -> {
-          if (piece.getColour() == colour) {
-            positions.add(coords);
-          }
-        });
-    return positions;
-  }
-
-  public Coordinates getKingPositionForPlayer(PlayerColour colour) {
-    for (int row = 0; row < BOARD_SIZE; row++) {
-      for (int col = 0; col < BOARD_SIZE; col++) {
-        Piece piece = board[row][col];
-        if (piece != null
-            && piece.getColour() == colour
-            && piece.getType() == Piece.PieceType.KING) {
-          return new Coordinates(row, col);
-        }
-      }
-    }
-    return null;
-  }
-
-  @Override
-  public Board clone() {
-    Board other = new Board();
-    forEachPiece(((coords, piece) -> other.placePiece(coords, piece.duplicate())));
-    return other;
-  }
-
-  private void forEachPiece(BiConsumer<Coordinates, Piece> function) {
-    for (int row = 0; row < BOARD_SIZE; row++) {
-      for (int col = 0; col < BOARD_SIZE; col++) {
-        Piece piece = board[row][col];
-        if (piece != null) {
-          function.accept(new Coordinates(row, col), piece);
-        }
-      }
-    }
   }
 }

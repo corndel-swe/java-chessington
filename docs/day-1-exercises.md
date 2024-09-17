@@ -14,7 +14,7 @@ To run the tests for this exercise, run `./mvnw clean test -Dtest=D1E1Tests` in 
 
 Your instructions are to:
 
-- [ ] Open up [counter.java](../src/main/java/com/corndel/exercises/counter.java) and create a new class called `Counter`.
+- [ ] Open up [Counter.java](../src/main/java/com/corndel/exercises/Counter.java) and create a new class called `Counter`.
 
 > [!NOTE]
 >

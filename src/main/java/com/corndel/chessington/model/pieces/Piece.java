@@ -26,8 +26,4 @@ public interface Piece {
 
   @JsonIgnore
   List<Move> getAllowedMoves(Coordinates from, Board board);
-
-  void setMoved();
-
-  Piece duplicate();
 }

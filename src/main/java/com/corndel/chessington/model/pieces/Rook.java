@@ -5,20 +5,35 @@ import com.corndel.chessington.model.Coordinates;
 import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class Rook extends AbstractPiece {
+public class Rook implements Piece {
+
+  private final Piece.PieceType type;
+  protected final PlayerColour colour;
+
   public Rook(PlayerColour colour) {
-    super(PieceType.ROOK, colour);
+    this.type = PieceType.ROOK;
+    this.colour = colour;
+  }
+
+  @Override
+  public Piece.PieceType getType() {
+    return type;
+  }
+
+  @Override
+  public PlayerColour getColour() {
+    return colour;
+  }
+
+  @Override
+  public String toString() {
+    return colour.toString() + " " + type.toString();
   }
 
   @Override
   public List<Move> getAllowedMoves(Coordinates from, Board board) {
-    return getLateralMoves(from, board).collect(Collectors.toList());
-  }
-
-  @Override
-  public Rook duplicate() {
-    return new Rook(colour);
+    // TODO Implement this!
+    return List.of();
   }
 }

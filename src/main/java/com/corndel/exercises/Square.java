@@ -1,10 +1,9 @@
 package com.corndel.exercises;
 
-public class Square extends Rectangle {
+public class Square {
   private double side;
 
   public Square(double side) {
-    super(side, side);
     this.side = side;
   }
 

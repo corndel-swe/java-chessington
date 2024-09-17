@@ -5,37 +5,35 @@ import com.corndel.chessington.model.Coordinates;
 import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class Knight extends AbstractPiece {
+public class Knight implements Piece {
+
+  private final Piece.PieceType type;
+  protected final PlayerColour colour;
+
   public Knight(PlayerColour colour) {
-    super(PieceType.KNIGHT, colour);
+    this.type = PieceType.KNIGHT;
+    this.colour = colour;
+  }
+
+  @Override
+  public Piece.PieceType getType() {
+    return type;
+  }
+
+  @Override
+  public PlayerColour getColour() {
+    return colour;
+  }
+
+  @Override
+  public String toString() {
+    return colour.toString() + " " + type.toString();
   }
 
   @Override
   public List<Move> getAllowedMoves(Coordinates from, Board board) {
-    return knightMoves(from)
-        .filter(board::inRange)
-        .filter(to -> !containsFriendlyPiece(to, board))
-        .map(to -> new Move(from, to))
-        .collect(Collectors.toList());
-  }
-
-  private Stream<Coordinates> knightMoves(Coordinates from) {
-    return Stream.of(
-        from.plus(2, 1),
-        from.plus(2, -1),
-        from.plus(-2, 1),
-        from.plus(-2, -1),
-        from.plus(1, 2),
-        from.plus(-1, 2),
-        from.plus(1, -2),
-        from.plus(-1, -2));
-  }
-
-  @Override
-  public Knight duplicate() {
-    return new Knight(colour);
+    // TODO Implement this!
+    return List.of();
   }
 }

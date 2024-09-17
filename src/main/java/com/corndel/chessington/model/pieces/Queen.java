@@ -5,22 +5,35 @@ import com.corndel.chessington.model.Coordinates;
 import com.corndel.chessington.model.Move;
 import com.corndel.chessington.model.PlayerColour;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class Queen extends AbstractPiece {
+public class Queen implements Piece {
+
+  private final Piece.PieceType type;
+  protected final PlayerColour colour;
+
   public Queen(PlayerColour colour) {
-    super(PieceType.QUEEN, colour);
+    this.type = PieceType.QUEEN;
+    this.colour = colour;
+  }
+
+  @Override
+  public Piece.PieceType getType() {
+    return type;
+  }
+
+  @Override
+  public PlayerColour getColour() {
+    return colour;
+  }
+
+  @Override
+  public String toString() {
+    return colour.toString() + " " + type.toString();
   }
 
   @Override
   public List<Move> getAllowedMoves(Coordinates from, Board board) {
-    return Stream.concat(getLateralMoves(from, board), getDiagonalMoves(from, board))
-        .collect(Collectors.toList());
-  }
-
-  @Override
-  public Queen duplicate() {
-    return new Queen(colour);
+    // TODO Implement this!
+    return List.of();
   }
 }
