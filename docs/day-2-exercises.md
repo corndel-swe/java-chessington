@@ -6,18 +6,20 @@ using classes.
 ## Exercise 1: Static methods and properties
 
 Let's make our own set of utility methods and properties, called `Maths`. A
-skeleton file and class is provided in [Maths.java](../src/main/java/com/corndel/exercises/Maths.java)
+skeleton file and class is provided in
+[Maths.java](../src/main/java/com/corndel/exercises/Maths.java)
 
 Read the docs about
 [static members](https://tech-docs.corndel.com/java/static-members.html).
 
-To run the tests for this exercise, run `./mvnw clean test -Dtest=D2E1Tests` in your terminal.
+To run the tests for this exercise, run `./mvnw clean test -Dtest=D2E1Tests` in
+your terminal.
 
 - [ ] Add a static property `PI` to `Maths`. The value of `Maths.PI` should be
       the `double` `3.14`.
 
-- [ ] Add the static method `Maths.max(a, b)`, which returns the largest of `a`
-      and `b`.
+- [ ] Add the static method `Maths.max(double a, double b)`, which returns the
+      largest of `a` and `b`.
 
 ## Exercise 2: Inheritance
 
@@ -47,21 +49,32 @@ from_ `Rectangle`.
 
 ## Exercise 3: Interfaces
 
-Thinking about shapes more generally, every shape has a similar set of properties - e.g. area and perimeter - but the way you work them out can be different.
+Every shape has a similar set of properties - e.g. area and perimeter - but the
+way you work them out can be different.
 
-I.e. Finding the area for a square and a rectangle may be similar enough, but what about a triangle? Or a circle?
+Finding the area for a square and a rectangle may be similar enough, but what
+about a triangle? Or a circle?
 
-We have another set of shape classes and a shape interface:
+In this exercise, we will write the `getArea` and `getPerimeter` methods in
+several shape classes to return the correct values for that shape.
 
-- The interface [Shape](../src/main/java/com/corndel/exercises/Shape.java)
-- The shapes [RightTriangle](../src/main/java/com/corndel/exercises/RightTriangle.java), [Circle](../src/main/java/com/corndel/exercises/Circle.java), and [Rectangle](../src/main/java/com/corndel/exercises/Rectangle.java)
-  `Shape` that has placeholder methods `area` and `perimeter`.
+- [ ] Read the documentation on
+      [Interfaces](https://tech-docs.corndel.com/java/interfaces.html)
 
-Read the documentation on
-[Method overriding](https://tech-docs.corndel.com/java/interfaces.html)
+- [ ] Take a look at the
+      [Shape](../src/main/java/com/corndel/exercises/Shape.java) interface
 
-To run the tests for this exercise, run `./mvnw clean test -Dtest=D2E3Tests` in your terminal.
+- [ ] Make sure
+      [RightTriangle](../src/main/java/com/corndel/exercises/RightTriangle.java)
+      implements the `Shape` interface
 
-- [ ] Make all the shape classes implement the `Shape` interface.
+  > [!NOTE]
+  >
+  > Make sure to use the `implements` keyword and `@Override` decorator
 
-- [ ] Write the `getArea` and `getPerimeter` methods in each class to return the correct values for that shape.
+- [ ] Make [Circle](../src/main/java/com/corndel/exercises/Circle.java)
+      implement `Shape`
+
+- [ ] And [Rectangle](../src/main/java/com/corndel/exercises/Rectangle.java)
+      (note that, although we have already written `getArea` and `getPerimeter`
+      methods, we should still `implements Shape` for consistency).

@@ -10,7 +10,8 @@ We'll use junit and assertj to write our unit tests.
       [Unit Testing](https://tech-docs.corndel.com/java/testing.html)
       documentation to get an idea of how to use `junit` and `assertj`.
 
-Create an empty file called `MathsTests.java` in the `src/test/com/corndel/exercises/` directory. We'll write our tests here.
+Create an empty file called `MathsTests.java` in the
+`src/test/com/corndel/exercises/` directory. We'll write our tests here.
 
 - [ ] Write a test that ensures `Maths.PI` is equal to `3.14`.
 
@@ -35,17 +36,18 @@ We want to test that the `area` and `perimeter` methods work as expected.
 Write a test that checks that the `area` method of `Rectangle` returns the
 correct value:
 
-- [ ] Arrange: You should create a new `Rectangle` with a known width and
+- [ ] **Arrange**: You should create a new `Rectangle` with a known width and
       height.
 
-- [ ] Act: Call the `area` method on the `Rectangle`.
+- [ ] **Act**: Call the `area` method on the `Rectangle`.
 
-- [ ] Assert: Check that the result is the expected area.
+- [ ] **Assert**: Check that the result is the expected area.
 
 - [ ] Similarly, write a test that checks that the `perimeter` method of
       `Rectangle` returns the correct value.
 
-- [ ] Run your test with `./mvnw clean test -Dtest=RectangleTests.java` in your terminal.
+- [ ] Run your test with `./mvnw clean test -Dtest=RectangleTests.java` in your
+      terminal.
 
 ## Exercise 3: Test Driven Development
 
@@ -68,19 +70,19 @@ method `Maths.round()`.
 > We'll start by writing tests for the simplest cases, then write the minimal
 > sensible code to make the tests pass.
 
-Round 1:
+**Round 1**:
 
 - [ ] Write a test that checks that `Maths.round` returns the same number when
       given a whole number.
 
-- [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal to make sure it
-      fails.
+- [ ] Run your test with `./mvnw clean test -Dtest=MathsTests` in your terminal
+      to make sure it fails.
 
 - [ ] Write the minimal sensible code to make the test pass.
 
 - [ ] Run your test again to make sure it passes.
 
-Round 2:
+**Round 2**:
 
 - [ ] Write a test that checks that `Maths.round` rounds _down_ when given a
       number with a decimal part less than 0.5.
@@ -91,7 +93,7 @@ Round 2:
 
 - [ ] Run your test again to make sure it passes.
 
-Round 3:
+**Round 3**:
 
 - [ ] Write the test that `Maths.round` rounds _up_ when given a number with a
       decimal part greater than or equal to 0.5. Change the code so that it
