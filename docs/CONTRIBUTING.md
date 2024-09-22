@@ -11,12 +11,13 @@ a guide to the models, telling you what they do and how they work.
 
 A position on the board is represented by the Coordinates class.
 
-The coordinates start from (0, 0) at the top-left, and end with (7, 7) at the bottom-right.
+The coordinates start from (0, 0) at the top-left, and end with (7, 7) at the
+bottom-right.
 
 You can create a new `Coordinates` like so:
 
-```
-var coordinate = new Coordinates(row, column)
+```java
+var coordinates = new Coordinates(row, column)
 ```
 
 ## Board
