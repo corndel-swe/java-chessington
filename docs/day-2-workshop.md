@@ -11,7 +11,8 @@ Your task is to do the following:
 
 - [ ] Make all pieces inherit from the `AbstractPiece` class
 
-- [ ] Remove any _duplicated_ code from the child classes
+- [ ] Move any _duplicated_ code from the child classes into the `AbstractPiece`
+      class
 
 - [ ] Make sure the tests that _were_ passing before your refactor still pass
 
