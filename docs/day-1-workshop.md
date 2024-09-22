@@ -63,5 +63,5 @@ Make sure to run the web app with
 ./mvnw exec:java -Dexec.mainClass=com.corndel.chessington.Main
 ```
 
-and visit and visit `http://localhost:8080`. You should see the moves you are
-implementing taking shape in the web app.
+and visit `http://localhost:8080`. You should see the moves you are implementing
+taking shape in the web app.
